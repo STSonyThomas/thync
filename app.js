@@ -21,7 +21,7 @@ app.post("/", (req, res) => {
 
   const options={
     method:"POST",
-    auth:"thync:f69feb42f988c0c553da05d62e5c5553-us21"
+    auth:"thync:a103006ce4697f086a88751d377b59d4-us21"
   }
   var data={
     members:[
