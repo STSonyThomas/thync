@@ -7,6 +7,10 @@ const e = require("express");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+app.use("/css", express.static(__dirname + '/css'));
+app.use("/images", express.static(__dirname + '/images'));
+app.use("/js", express.static(__dirname + '/js'));
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
@@ -18,6 +22,9 @@ app.post("/", (req, res) => {
   const email=req.body.email;
   const url="https://us21.api.mailchimp.com/3.0/lists/"+listId;
   console.log(firstName,lastName,email);
+
+  let dotenv = require('dotenv').config()
+  console.log(dotenv);
 
   const options={
     method:"POST",
